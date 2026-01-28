@@ -17,15 +17,20 @@ Some high-severity vulnerabilities remain in the core `@angular/*` packages. The
 
 ## Deployment to GitHub Pages
 
-The project is configured for deployment to GitHub Pages.
+The project is configured for automatic deployment to GitHub Pages via GitHub Actions.
 
-To deploy the application:
+### Automatic Deployment
+Every push to the `main` branch will trigger the "Build and Deploy" workflow, which:
+1. Builds the project for production with the correct `base-href` (`/izoleuzin/`).
+2. Pushes the build artifacts to the `gh-pages` branch.
+
+### Manual Deployment
+To deploy the application manually:
 1. Ensure you have the necessary permissions to push to the repository.
 2. Run the following command:
    ```bash
    npm run deploy
    ```
-This command will build the project for production with the correct `base-href` (`/izoleuzin/`) and use `angular-cli-ghpages` to push the build artifacts to the `gh-pages` branch.
 
 ## Development server
 
